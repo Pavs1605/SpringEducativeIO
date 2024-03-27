@@ -1,14 +1,19 @@
 package org.example.model;
 
 
-import java.util.Date;
+import org.springframework.stereotype.Component;
 
+import java.util.Date;
+@Component
 public class Player {
     private int id;
     private String name;
     private String nationality;
     private Date birthDate;
     private int titles;
+
+    public Player() {
+    }
 
     public Player(int id, String name, String nationality, Date birthDate, int titles) {
         super();

@@ -3,6 +3,7 @@ package org.example.servlets;
 
 import org.example.model.Player;
 import org.example.model.PlayerService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,12 +17,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/player.do")
 public class PlayerServlet extends HttpServlet {
 
-    PlayerService service = new PlayerService();
+    @Autowired
+    PlayerService service;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
 
-        request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/main-menu.jsp").forward(request, response);
 
     }
 
