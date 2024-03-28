@@ -12,9 +12,6 @@ public class Player {
     private Date birthDate;
     private int titles;
 
-    public Player() {
-    }
-
     public Player(int id, String name, String nationality, Date birthDate, int titles) {
         super();
         this.id = id;

@@ -8,8 +8,6 @@ import java.util.List;
 import java.sql.Date;
 @Service
 public class PlayerService {
-    public PlayerService() {
-    }
 
     private List<Player> players = Arrays.asList(
             new Player(1, "Djokovic", "Serbia", new Date(1987-05-22), 81),
