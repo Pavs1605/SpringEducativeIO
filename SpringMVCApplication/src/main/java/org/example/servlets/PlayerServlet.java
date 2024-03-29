@@ -17,8 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/player.do")
 public class PlayerServlet extends HttpServlet {
 
-    @Autowired
-    PlayerService service;
+    PlayerService service = new PlayerService();
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");

@@ -6,15 +6,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping(value = "/")
 public class PlayerController {
-    @Autowired
+
     PlayerService service;
+
+    public PlayerController() {
+
+    }
+
+    @Autowired
+    public PlayerController(PlayerService service) {
+        this.service = service;
+    }
 
     @RequestMapping("/showPlayerForm")
     public String showForm () {
@@ -23,10 +32,10 @@ public class PlayerController {
 
     //method to handle /processPlayerForm
     @RequestMapping(value = "/processPlayerForm")
-    public String processForm(HttpServletRequest request, Model model) {
-        String pName = request.getParameter("playerName");
-        Player player = service.getPlayerByName(pName);
-        model.addAttribute("name", pName);
+    public String processForm(@RequestParam(value = "playerName", defaultValue = "abc") String playerName, Model model) {
+      //  String pName = request.getParameter("playerName");
+        Player player = service.getPlayerByName(playerName);
+        model.addAttribute("name", playerName);
         model.addAttribute("country", player.getNationality());
         model.addAttribute("dob", player.getBirthDate());
         model.addAttribute("titles", player.getTitles());

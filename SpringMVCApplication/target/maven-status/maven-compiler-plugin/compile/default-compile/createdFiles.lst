@@ -1,6 +1,8 @@
-org\example\model\PlayerService.class
 org\example\controllers\TennisController.class
 org\example\servlets\PlayerServlet.class
+org\example\controllers\AthleteController.class
 org\example\Main.class
 org\example\controllers\PlayerController.class
+org\example\model\Athlete.class
+org\example\model\PlayerService.class
 org\example\model\Player.class
