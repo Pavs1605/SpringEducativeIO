@@ -9,5 +9,8 @@
         <module name="SpringMVCApplication" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SringMVCApplication" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

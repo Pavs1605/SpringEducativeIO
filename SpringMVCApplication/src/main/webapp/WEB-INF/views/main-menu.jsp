@@ -9,9 +9,14 @@
 <body>
 	<h2> Spring MVC - Tennis Player Database</h2>
         	<hr><br>
-        	<a href="${pageContext.request.contextPath}/showPlayerForm"> Search Player</a>
+        	<a href="${pageContext.request.contextPath}/spring/showPlayerForm"> Search Player</a>
 
         	<br><br>
-            	<a href="player/showPlayerForm"> Add Player Details</a>
+            	<a href="spring/player/showPlayerForm"> Add Player Details</a>
+
+
+           <br><br>
+                         <a href="spring/showStatsForm"> Show stats</a>
+
 </body>
 </html>

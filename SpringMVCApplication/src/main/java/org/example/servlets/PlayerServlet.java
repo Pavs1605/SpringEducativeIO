@@ -1,12 +1,10 @@
 package org.example.servlets;
 
 
-import org.example.model.Player;
+import org.example.model.PlayerNew;
 import org.example.model.PlayerService;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +28,7 @@ public class PlayerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String playerName = request.getParameter("name");
 
-        Player player = service.getPlayerByName(playerName);
+        PlayerNew player = service.getPlayerByName(playerName);
 
         request.setAttribute("name", playerName);
         request.setAttribute("country", player.getNationality());
